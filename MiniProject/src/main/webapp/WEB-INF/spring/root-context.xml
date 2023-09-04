@@ -4,5 +4,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	<!--property의 역할은 HikariConfig라는 객체가 생성이 될때 setter method 호출 -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+	 <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	 <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/com"/>
+	 <property name="username" value="com"/>
+	 <property name="password" value="com01"/>
+	</bean>	
+	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+	 <constructor-arg ref="hikariConfig"/>
+    </bean>
+
 </beans>
