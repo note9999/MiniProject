@@ -16,11 +16,15 @@
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 	 <constructor-arg ref="hikariConfig"/>
     </bean>
+	
 	<!-- 마이바티스 설정 -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
-
-
+	
+	<!-- 스캔 설정(스캔을 이용해서 맵퍼 안에있는 인터페이스를 메모리에 올림) -->
+	
 	<mybatis-spring:scan base-package="minipj.sh.mapper"/>
+	
+
 </beans>

@@ -21,6 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 컨트롤러와 서비스 스캔 -->
 	<context:component-scan base-package="minipj.sh.controller" />
 	<context:component-scan base-package="minipj.sh.service" />
 	
