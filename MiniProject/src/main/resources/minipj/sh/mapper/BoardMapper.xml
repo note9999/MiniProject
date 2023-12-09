@@ -3,5 +3,9 @@
 <!--namespace는 mapper의 인터페이스가 있는 곳을 보여줌-->
 <mapper namespace="minipj.sh.mapper.BoardMapper">
 
+<select id="getList" resultType="minipj.sh.entity.Board">
+	select * from tblBoard order by boardGroup desc
+</select>
+
 
 </mapper>
