@@ -6,7 +6,7 @@ create table tblBoard(
 	content varchar(2000) not null,
 	writer varchar(30) not null,
 	indate datetime default now(),
-	count int default 0,
+	count int default 0, 
 	-- 댓글 기능 추가--
 	boardGroup int,
 	boardSequence int,
@@ -14,3 +14,5 @@ create table tblBoard(
 	boardAvailable int,
 	primary key(idx)
 );
+
+--회원테이블--
