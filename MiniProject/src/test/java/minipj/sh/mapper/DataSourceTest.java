@@ -21,6 +21,7 @@ public class DataSourceTest {
 	@Autowired
 	private DataSource dataSouce;
 	
+	// 데이터연결test
 	@Test
 	public void testConnection() {
 		try(Connection conn=dataSouce.getConnection()) {
