@@ -2,8 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
-		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:component-scan base-package="minipj.sh.service" />
 	
 	<!-- 히카리 -->
 	<!--property의 역할은 HikariConfig라는 객체가 생성이 될때 setter method 호출 -->
@@ -25,6 +29,7 @@
 	<!-- 스캔 설정(스캔을 이용해서 맵퍼 안에있는 인터페이스를 메모리에 올림) -->
 	
 	<mybatis-spring:scan base-package="minipj.sh.mapper"/>
+	
 	
 
 </beans>
